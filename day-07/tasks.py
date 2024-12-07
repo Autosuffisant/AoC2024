@@ -17,6 +17,9 @@ def evaluate(result, operands, operators):
         copyOperands = operands.copy()
         computed = operator(copyOperands[0], copyOperands[1])
 
+        if computed > result:
+            continue
+
         copyOperands.pop(0)
         copyOperands.pop(0)
         copyOperands.insert(0, computed)
